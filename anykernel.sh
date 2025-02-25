@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=Wild Plus Kernel by The Wild James aka Morgan Weedman
+kernel.string=Wild Plus Kernel by TheWildJames or Morgan Weedman
 do.devicecheck=0
 do.modules=0
 do.systemless=0
@@ -36,7 +36,6 @@ kernel_version=$(cat /proc/version | awk -F '-' '{print $1}' | awk '{print $3}')
 case $kernel_version in
     5.1*) ksu_supported=true ;;
     6.1*) ksu_supported=true ;;
-    6.6*) ksu_supported=true ;;
     *) ksu_supported=false ;;
 esac
 
