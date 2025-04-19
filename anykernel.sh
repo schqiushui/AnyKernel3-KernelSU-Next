@@ -47,8 +47,19 @@ $ksu_supported || abort "  -> Non-GKI device, abort."
 if [ -L "/dev/block/bootdevice/by-name/init_boot_a" -o -L "/dev/block/by-name/init_boot_a" ]; then
     split_boot # for devices with init_boot ramdisk
     flash_boot # for devices with init_boot ramdisk
+
+    # === New Logic Starts ===
+    if [ -f dtbo.img ]; then
+      flash_dtbo
+      ui_print " " "[✓] dtbo.img successfully flashed."
+    else
+      ui_print " " "[✗] dtbo.img not found, aborting flashing process."
+      abort
+    fi
+    # === New Logic Ends ===
 else
     dump_boot # use split_boot to skip ramdisk unpack, e.g. for devices with init_boot ramdisk
     write_boot # use flash_boot to skip ramdisk repack, e.g. for devices with init_boot ramdisk
 fi
 ## end boot install
+
