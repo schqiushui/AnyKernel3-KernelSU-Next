@@ -53,7 +53,7 @@ if [ -L "/dev/block/bootdevice/by-name/init_boot_a" -o -L "/dev/block/by-name/in
       flash_dtbo
       ui_print " " "[✓] dtbo.img successfully flashed."
     else
-      ui_print " " "[✗] dtbo.img not found, aborting flashing process."
+      ui_print " " "[✗] dtbo.img not found, skip flashing process."
     fi
     # === New Logic Ends ===
 else
