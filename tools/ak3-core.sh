@@ -820,6 +820,7 @@ setup_ak() {
   [ "$slot_select" ] && SLOT_SELECT="$slot_select";
   [ "$no_block_display" ] && NO_BLOCK_DISPLAY="$no_block_display";
   [ "$no_magisk_check" ] && NO_MAGISK_CHECK="$no_magisk_check";
+  [ "$no_vbmeta_partition_patch" ] && NO_VBMETA_PARTITION_PATCH="$no_vbmeta_partition_patch";
   unset block is_slot_device ramdisk_compression patch_vbmeta_flag customdd slot_select no_block_display no_magisk_check;
 
   # slot detection enabled by IS_SLOT_DEVICE=1 or auto (from anykernel.sh)
